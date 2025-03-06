@@ -7,13 +7,12 @@
 
 Запрос:
 
-SELECT c.login, 
-
-   COUNT(o.id) AS "deliveryCount"
-   FROM "Couriers" AS c
-   LEFT JOIN "Orders" AS o ON c.id = o."courierId"
-   WHERE o."inDelivery" = true
-   GROUP BY c.login;
+      SELECT c.login, 
+      COUNT(o.id) AS "deliveryCount" 
+      FROM "Couriers" AS c 
+      LEFT JOIN "Orders" AS o ON c.id = o."courierId" 
+      WHERE o."inDelivery" = true 
+      GROUP BY c.login;
 
 Скриншот результата запроса в файле: Диплом_Часть2_Задание1.png
 
@@ -23,13 +22,12 @@ SELECT c.login,
 
 Запрос:
 
-SELECT track,
-
-   CASE 
-  WHEN finished = true THEN 2 
-  WHEN cancelled = true THEN -1 
-  WHEN "inDelivery" = true THEN 1 
-  ELSE 0 END AS status 
-FROM "Orders";
+       SELECT track, 
+         CASE 
+       WHEN finished = true THEN 2 
+       WHEN cancelled = true THEN -1 
+       WHEN "inDelivery" = true THEN 1 
+       ELSE 0 END AS status 
+       FROM "Orders";
 
 Скриншот результата запроса в файле: Диплом_Часть2_Задание2.png
