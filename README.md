@@ -14,7 +14,7 @@ SELECT c.login,
    WHERE o."inDelivery" = true
    GROUP BY c.login;
 
-Скриншот результата запроса database.png
+Скриншот результата запроса в файле Диплом Часть2 Задание1.png
 
 Задание 2
 
@@ -30,4 +30,4 @@ SELECT track,
   ELSE 0 END AS status 
 FROM "Orders";
 
-Скриншот результата запроса database2.png
+Скриншот результата запроса Диплом Часть2 Задание2.png
