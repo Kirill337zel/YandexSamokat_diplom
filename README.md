@@ -8,6 +8,7 @@
 Запрос:
 
 SELECT c.login, 
+
    COUNT(o.id) AS "deliveryCount"
    FROM "Couriers" AS c
    LEFT JOIN "Orders" AS o ON c.id = o."courierId"
@@ -16,13 +17,14 @@ SELECT c.login,
 
 Скриншот результата запроса в файле: Диплом_Часть2_Задание1.png
 
-Задание 2
+Задание 2.
 
 Ты тестируешь статусы заказов. Нужно убедиться, что в базе данных они записываются корректно. Для этого: выведи все трекеры заказов и их статусы. Статусы определяются по следующему правилу: Если поле finished == true, то вывести статус 2. Если поле canсelled == true, то вывести статус -1. Если поле inDelivery == true, то вывести статус 1. Для остальных случаев вывести 0.
 
 Запрос:
 
-SELECT track, 
+SELECT track,
+
    CASE 
   WHEN finished = true THEN 2 
   WHEN cancelled = true THEN -1 
